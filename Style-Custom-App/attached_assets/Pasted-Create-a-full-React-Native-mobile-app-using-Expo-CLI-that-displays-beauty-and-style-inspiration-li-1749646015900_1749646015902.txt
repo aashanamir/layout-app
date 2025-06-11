@@ -1,0 +1,76 @@
+Create a full React Native mobile app using Expo CLI that displays beauty and style inspiration — like Mehndi Designs, Hairstyles, Nail Art, etc.
+
+The app does not use any backend or Firebase. It should rely entirely on static local data and local image assets. No authentication is required.
+
+### 🎨 App Purpose:
+A gallery-style app where users can browse beautiful designs by category (e.g., Mehndi, Hairstyles), then tap to view full-screen details of a specific design.
+
+---
+
+### 📁 Folder Structure:
+- /assets/
+  - /images/
+    - mehndi1.jpg, mehndi2.jpg
+    - hair1.jpg, hair2.jpg
+- /constants/
+  - dummyData.js
+- /components/
+  - CategoryCard.js
+- /screens/
+  - HomeScreen.js
+  - CategoryScreen.js
+  - DetailScreen.js
+- App.js
+
+---
+
+### 🔗 Navigation:
+Use `@react-navigation/native` and `@react-navigation/native-stack` for navigation between:
+- HomeScreen → CategoryScreen → DetailScreen
+
+---
+
+### 🏠 HomeScreen:
+- Show a FlatList of categories (e.g., Mehndi, Hairstyles, etc.)
+- Each category shown as a stylized card:
+  - Rounded image background with overlay title text
+  - Touchable, navigates to CategoryScreen
+- Use clean design with proper spacing, padding, and a header
+
+---
+
+### 📂 CategoryScreen:
+- On selecting a category, show related images in a 2-column grid
+- Use FlatList to render image cards
+- Each card:
+  - Local image with rounded corners
+  - On tap, navigate to DetailScreen with that image's data
+
+---
+
+### 🖼️ DetailScreen:
+- Show selected design/image in full screen or centered large preview
+- Title below image (e.g., "Bridal Mehndi Design 2024")
+- Tags like `#mehndi #bridal #trending`
+- Optional: Add share/download buttons using `expo-sharing` (future scope)
+- Back button at the top
+
+---
+
+### 💄 UI Design:
+- Modern and aesthetic — like a mini Pinterest
+- Use light background colors (`#fefefe`, `#fafafa`)
+- Apply border radius, shadows, and proper typography
+- Use SafeAreaView and ScrollView where needed
+- Clean fonts, soft cards, elegant feel
+
+---
+
+### 📦 Dependencies:
+Install these using Expo:
+```bash
+npx create-expo-app BeautyGalleryApp
+cd BeautyGalleryApp
+
+npm install @react-navigation/native @react-navigation/native-stack
+npx expo install react-native-screens react-native-safe-area-context react-native-gesture-handler react-native-reanimated
